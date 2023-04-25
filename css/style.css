@@ -61,6 +61,10 @@ h1{
     margin-bottom: 8px;
 }
 
+.selecionado{
+    border: 3px #404EED solid;
+}
+
 input{
     background-color: #F2F2F2;
     width: 100%;
@@ -79,6 +83,13 @@ button {
     align-items: center;
     background-color: #C4C4C4;
     margin-top: 24px;
+    border-radius: 10px;
+    border: none;
+}
+
+.botaoativ {
+    background-color: #404EED;
+    cursor: pointer;
 }
 
 button h2 {
