@@ -156,3 +156,7 @@ button h2 {
 .pictures span{
     font-weight: 700;
 }
+
+ul {
+    display: flex;
+}

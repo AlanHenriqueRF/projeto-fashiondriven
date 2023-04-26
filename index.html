@@ -62,8 +62,8 @@
                     </div>
                 </div>
                 <label ><h1>Imagem de referência</h1></label>
-                <input type="url" placeholder=" Insira o link" >
-                <button><h2>Confirmar pedido</h2></button>
+                <input type="url" placeholder=" Insira o link" onchange="verlink(this)">
+                <button disabled="disabled" onclick="alert('oi')"><h2>Confirmar pedido</h2></button>
             </div>
         </div>
         <div class="fashiongirl">
@@ -73,28 +73,41 @@
     <div class="baseboard">
         <h1>Ultimos pedidos</h1>
         <div class="boxpics">
-            <div class="pictures">
-                <img src="./projeto__fashiondriven__imagens/Blusa1.png">
-                <h2><span>Criador:</span> Agata</h2>
-            </div>
-            <div class="pictures">
-                <img src="./projeto__fashiondriven__imagens/Blusa2.png">
-                <h2><span>Criador:</span> Bruna</h2>
-            </div>
-            <div class="pictures">
-                <img src="./projeto__fashiondriven__imagens/Blusa3.png">
-                <h2><span>Criador:</span> Camila</h2>
-            </div>
-            <div class="pictures">
-                <img src="./projeto__fashiondriven__imagens/Blusa4.png">
-                <h2><span>Criador:</span> Daniel</h2>
-            </div>
-            <div class="pictures">
-                <img src="./projeto__fashiondriven__imagens/Blusa5.png">
-                <h2><span>Criador:</span> Ester</h2>
-            </div>
+            <ul>
+                <li>
+                    <div class="pictures">
+                    <img src="./projeto__fashiondriven__imagens/Blusa1.png">
+                    <h2><span>Criador:</span> Agata</h2>
+                    </div>
+                </li>
+                <li>
+                    <div class="pictures">
+                    <img src="./projeto__fashiondriven__imagens/Blusa2.png">
+                    <h2><span>Criador:</span> Bruna</h2>
+                    </div>
+                </li>
+                <li>
+                    <div class="pictures">
+                    <img src="./projeto__fashiondriven__imagens/Blusa3.png">
+                    <h2><span>Criador:</span> Camila</h2>
+                    </div>
+                </li>
+                <li>
+                    <div class="pictures">
+                    <img src="./projeto__fashiondriven__imagens/Blusa4.png">
+                    <h2><span>Criador:</span> Daniel</h2>
+                    </div>
+                </li>
+                <li>
+                    <div class="pictures">
+                    <img src="./projeto__fashiondriven__imagens/Blusa5.png">
+                    <h2><span>Criador:</span> Ester</h2>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script/script.js"></script>    
 </body>
 </html>
