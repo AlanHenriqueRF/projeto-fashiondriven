@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="menu"><img src="./projeto__fashiondriven__imagens/Logo.png"></div>
+    <div class="menu"><img src="./projeto__fashiondriven__imagens/Logo.png">
+    </div>
     <div class="container">
         <div class="container_clothes">
             <div class="clothes">
@@ -63,8 +64,9 @@
                 </div>
                 <label ><h1>Imagem de referência</h1></label>
                 <input type="url" placeholder=" Insira o link" onchange="verlink(this)">
-                <button disabled="disabled" onclick="alert('oi')"><h2>Confirmar pedido</h2></button>
+                <button disabled="disabled" onclick="pedeblusa()"><h2>Confirmar pedido</h2></button>
             </div>
+            <div class="blusa some"></div>
         </div>
         <div class="fashiongirl">
             <img src="./projeto__fashiondriven__imagens/ilustração.png">
@@ -72,8 +74,8 @@
     </div>
     <div class="baseboard">
         <h1>Ultimos pedidos</h1>
-        <div class="boxpics">
-            <ul>
+        <!-- <div class="boxpics"> -->
+            <ul class="boxpics">
                 <li>
                     <div class="pictures">
                     <img src="./projeto__fashiondriven__imagens/Blusa1.png">
@@ -105,7 +107,7 @@
                     </div>
                 </li>
             </ul>
-        </div>
+        <!-- </div> -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script/script.js"></script>    
