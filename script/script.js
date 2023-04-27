@@ -95,7 +95,8 @@ function deuruin(erro){
         let blocoblusa = document.querySelector('.blusa')
         blocoblusa.classList.remove('some')
         blocoblusa.innerHTML = `<h1>Algo deu errado!</h1><p class="p_cima">Um passarinho me contou que a imagem não é válida. Tente novamente!</p><img class="imgerro" src="./projeto__fashiondriven__imagens/image 1.png"><p>Voltando para a página principal em 10s</p>`;
-       
+
+        intervalo = setInterval(contagem_erro,1000);
         setTimeout(depoisdos10erro,10000);
     }
     else{
@@ -104,6 +105,18 @@ function deuruin(erro){
     }
 }
 
+let cont = 9;
+
+function contagem(){
+    document.querySelector('.blusa p').innerHTML = `<p>Voltando para a página principal em ${cont}s</p>`
+    cont--;
+}
+function contagem_erro(){
+    document.querySelector('.blusa').childNodes[3].innerHTML = `<p>Voltando para a página principal em ${cont}s</p>`
+    cont--;
+}
+let intervalo;
+
 function pediublusa(resposta){
     // alert(`O status do pedido é ${resposta.status }.`);
     if (resposta.status === 201){
@@ -111,7 +124,7 @@ function pediublusa(resposta){
         let blocoblusa = document.querySelector('.blusa')
         blocoblusa.classList.remove('some')
         blocoblusa.innerHTML = `<h1>Pedido feito com sucesso!</h1><img src="${resposta.data.image}"><p>Voltando para a página principal em 10s</p>`;
-
+        intervalo = setInterval(contagem,1000);
         setTimeout(depoisdos10,10000);
     }
     else{
@@ -121,11 +134,15 @@ function pediublusa(resposta){
 }
 
 function depoisdos10erro(){
+    clearInterval(intervalo);
+    cont = 9;
     document.querySelector('.clothes').classList.remove('some');
     document.querySelector('.blusa').classList.add('some');
 }
 
 function depoisdos10(){
+    clearInterval(intervalo);
+    cont = 9;
     document.querySelector('.clothes').classList.remove('some')
     document.querySelector('.blusa').classList.add('some')
     document.querySelector('input').value = '';
