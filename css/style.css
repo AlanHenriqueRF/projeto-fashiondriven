@@ -1,13 +1,36 @@
 .menu{
     background-color: #404EED;
     height: 89px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .menu img {
     width: 340px;
     height: 57px;
-    margin-top: 16px;
-    margin-left: 80px;
+    top: 14px;
+    left: 80px;
+    position: absolute;
+
+}
+
+.cumprimento{
+    width: 248px;
+    height: 39px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 1065px;
+    top: 25px;
+}
+
+.cumprimento span{
+    font-weight: 700;
 }
 
 .container{

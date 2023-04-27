@@ -2,6 +2,10 @@ let nome = prompt('Qual o seu nome ?');
 let modelo, gola, tecido, obj;
 let link = '';
 
+function cuidanone(){
+    document.querySelector('.cumprimento').innerHTML = `<h1>Olá, <span>${nome}</span></h1>`
+}
+
 axios.defaults.headers.common['Authorization'] = 'OdIdHp43nAdZeoW0W7UVQfKN';
 
 function selecionablusa(elemento){
@@ -136,24 +140,48 @@ function depoisdos10(){
     recarregoupag();
 }
 
+function refazerpedido(elemento){
+    let confimacao = confirm(`${nome} tem certeza que deseja fazer este pedido ?`);
+    if (confimacao === true){
+        let todaslis = document.querySelectorAll('li');
+        elemento = elemento.parentNode;
+        for (let i = 0;i<= todaslis.length;i++){
+            if (todaslis[i] === elemento){
+                let obj = {
+                    "model": lista_get[i].model,
+                    "neck": lista_get[i].neck,
+                    "material": lista_get[i].material,
+                    "image": lista_get[i].image,
+                    "owner": nome,
+                    "author": nome
+                }
+                let promessa = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts',obj)   
+                promessa.then(pediublusa)
+                promessa.catch(deuruin)
+                alert('Seu pedido ja foi confirmado')
+                break
+            }
+        }
+    }
+}
+
 function recarregoupag(){
     let promessa = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
     promessa.then(pegoudoserv);
 }
-let x = '';
+let lista_get = '';
 function pegoudoserv(resposta){
+    lista_get = resposta.data;
     let lista = document.querySelector('ul')
     lista.innerHTML = '';
-    console.log(resposta);
     for(let i = 0 ;i<=resposta.data.length;i++){
         lista.innerHTML += `<li>
-        <div class="pictures">
+        <div class="pictures" onclick="refazerpedido(this)">
         <img src="${resposta.data[i].image}">
         <h2><span>Criador:</span> ${resposta.data[i].owner}</h2>
         </div>
     </li>`
     }
-    x = resposta;
-    console.log(x);
 }
 recarregoupag()
+
