@@ -129,13 +129,17 @@ button h2 {
 .boxpics {
     display: flex;
     justify-content: space-between;
-    margin-left: 122px;
+    margin-left: 114px;
     margin-right: 173px;
-    overflow: hidden;
+    overflow: scroll;
+}
+
+li {
+    margin: 7px;
 }
 
 .pictures{
-    width: 202px;
+    width: 225px;
     height: 237px;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -144,6 +148,11 @@ button h2 {
     justify-content: space-around;
     align-items: center;
     position: relative;
+}
+
+.pictures img{
+    position: absolute;
+    height: 65%;
 }
 
 .pictures h2 {
@@ -179,6 +188,7 @@ button h2 {
 }
 
 .blusa img{
+    height: 75%;
     margin-bottom: 15px;
     margin-top: 10px;
 }

@@ -70,7 +70,6 @@ function ativandobutao(){
         document.querySelector('button').setAttribute('disabled','disabled')
     }
 }
-let x = ''
 function pedeblusa(){
     let obj = {
         "model": modelo,
@@ -95,6 +94,10 @@ function deuruin(erro){
 
         setTimeout(depoisdos10erro,10000);
     }
+    else{
+        alert('Foi encontrado um erro inesperado, a página sera recarregada');
+        window.location.reload(true);
+    }
 }
 
 function pediublusa(resposta){
@@ -106,6 +109,10 @@ function pediublusa(resposta){
         blocoblusa.innerHTML = `<h1>Pedido feito com sucesso!</h1><img src="${resposta.data.image}"><p>Voltando para a página principal em 10s</p>`;
 
         setTimeout(depoisdos10,10000);
+    }
+    else{
+        alert('Foi encontrado um erro inesperado, a página sera recarregada');
+        windowwindow.location.reload(true);
     }
 }
 
@@ -126,4 +133,27 @@ function depoisdos10(){
     while (document.querySelector('.selecionado') != null){
         document.querySelector('.selecionado').classList.remove('selecionado')
     }
+    recarregoupag();
 }
+
+function recarregoupag(){
+    let promessa = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
+    promessa.then(pegoudoserv);
+}
+let x = '';
+function pegoudoserv(resposta){
+    let lista = document.querySelector('ul')
+    lista.innerHTML = '';
+    console.log(resposta);
+    for(let i = 0 ;i<=resposta.data.length;i++){
+        lista.innerHTML += `<li>
+        <div class="pictures">
+        <img src="${resposta.data[i].image}">
+        <h2><span>Criador:</span> ${resposta.data[i].owner}</h2>
+        </div>
+    </li>`
+    }
+    x = resposta;
+    console.log(x);
+}
+recarregoupag()
