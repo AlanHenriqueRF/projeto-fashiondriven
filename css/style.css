@@ -3,14 +3,12 @@
     height: 89px;
     display: flex;
     align-items: center;
-    position: relative;
 }
 
 .menu img {
     width: 340px;
     height: 57px;
-    top: 14px;
-    left: 80px;
+    margin-left: 5.86%;
     position: absolute;
 
 }
@@ -24,10 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 1065px;
-    top: 25px;
-}
+    margin-left: 78.03%;
+} 
+
 
 .cumprimento span{
     font-weight: 700;

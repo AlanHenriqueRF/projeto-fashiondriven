@@ -2,10 +2,10 @@ let nome = prompt('Qual o seu nome ?');
 let modelo, gola, tecido, obj;
 let link = '';
 
-function cuidanone(){
+function cumprimentonome(){
     document.querySelector('.cumprimento').innerHTML = `<h1>Olá, <span>${nome}</span></h1>`
 }
-
+cumprimentonome()
 axios.defaults.headers.common['Authorization'] = 'OdIdHp43nAdZeoW0W7UVQfKN';
 
 function selecionablusa(elemento){
@@ -95,7 +95,7 @@ function deuruin(erro){
         let blocoblusa = document.querySelector('.blusa')
         blocoblusa.classList.remove('some')
         blocoblusa.innerHTML = `<h1>Algo deu errado!</h1><p class="p_cima">Um passarinho me contou que a imagem não é válida. Tente novamente!</p><img class="imgerro" src="./projeto__fashiondriven__imagens/image 1.png"><p>Voltando para a página principal em 10s</p>`;
-
+       
         setTimeout(depoisdos10erro,10000);
     }
     else{
